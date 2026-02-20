@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <!-- Meta Información General -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Título de la Página -->
+  <title>Tutorial — Tema 1</title>
+  <!-- Descripción de la Página -->
+  <meta name="description" content="Tutorial para crear páginas web con Inteligencia Artificial usando Claude AI y Visual Studio Code. HTML5, CSS3, JavaScript desde cero."/>
+  <meta name="keywords" content="tutorial web, inteligencia artificial, Claude AI, HTML5, CSS3, JavaScript, VS Code, principiantes, SENA"/>
+  <!-- Meta para SEO -->
+  <meta name="robots" content="follow, index"/>
+  <link rel="canonical" href=""/>
+  <!-- Seguridad: Política de contenido -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com;"/> 
+  <!-- Autor de la Página -->
+  <meta name="author" content="Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez">
+  <!-- Seguridad -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <!-- Enlace a Estilos CSS -->
+  <link rel="stylesheet" href="../styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+   <!-- Scripts JavaScript -->
+  <script src="../java.js" defer></script>
+</head>
+<body>
+
+  <!-- BOTÓN VOLVER  A Pagina Principal-->
+     <a href="../index.html" class="btn-home"> ← Volver</a>
+<!-- ════════════════════════════════════════
+     TEMA 1 — ESTRUCTURA DEL PROYECTO
+════════════════════════════════════════ -->
+<section class="tema-section" id="tema1">
+  <div class="container">
+    <div class="tema-header">
+      <div class="tema-number">01</div>
+      <div>
+        <span class="tema-tag">// antes de escribir una sola línea de código</span>
+        <h2 class="tema-title">Cómo <span class="accent">Estructurar</span> tu Proyecto Web con IA</h2>
+        <p class="tema-desc">Un proyecto web sin estructura es como construir una casa sin planos. Este módulo te enseña a organizar tu proyecto desde cero usando VS Code — tanto de forma visual como desde la terminal integrada.</p>
+      </div>
+    </div>
+
+    <!-- Herramientas necesarias -->
+    <span class="section-eyebrow">// herramientas que necesitas</span>
+    <div class="grid-3" style="margin-bottom:2rem;">
+      <div class="card">
+        <span class="card-icon">💻</span>
+        <div class="card-title">Visual Studio Code</div>
+        <div class="card-text">El editor más usado del mundo. Gratuito y con miles de extensiones. Descárgalo en <strong>code.visualstudio.com</strong>. Una vez instalado, la terminal integrada &nbsp;(<code>Ctrl + J </code>) &nbsp;te permite ejecutar comandos sin salir del editor.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <div class="card-title">Claude AI (claude.ai)</div>
+        <div class="card-text">Tu asistente de IA. Úsalo en <strong>claude.ai, cursor, chatgpt o la de tu preferencia</strong> desde el navegador o instalarla. Aquí le vas a pedir que sea tu profesor, te diga el paso a paso, te genere código, te explique las lineas, te explique errores y te dé ideas de diseño.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌐</span>
+        <div class="card-title">Live Server (extensión)</div>
+        <div class="card-text">Extensión gratuita de VS Code que abre tu página en el navegador y la recarga automáticamente cada vez que guardas. Instálala desde el panel de extensiones de Visual Studio Code: busca <strong>"Live Server" de Ritwick Dey</strong>. para ejecutarlo click derecho en el index.html principal y buscas  open with live server </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Extensiones recomendadas -->
+    <span class="section-eyebrow">// extensiones esenciales para VS Code</span>
+    <div class="grid-4" style="margin-bottom:2rem;">
+      <div class="card">
+        <div class="card-title">🔴 Live Server</div>
+        <div class="card-text">Recarga automática al guardar. Indispensable para ver cambios en tiempo real sin refrescar manualmente.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">🎨 Prettier</div>
+        <div class="card-text">Formatea tu código automáticamente al guardar. Tu HTML, CSS y JS siempre quedarán bien indentados.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">🔍 IntelliSense CSS</div>
+        <div class="card-text">Autocompletado de clases CSS directamente en el HTML. Evita errores de tipeo en nombres de clases.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">🌈 Color Highlight</div>
+        <div class="card-text">Muestra el color real dentro del código cuando escribes un HEX o RGB. Muy útil al diseñar.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- VS CODE: Cómo abrirlo y navegar -->
+    <span class="section-eyebrow">// tutorial visual paso a paso en VS Code</span>
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1.2rem;">Las capturas a continuación muestran exactamente lo que verás en tu pantalla al empezar a crear los archivos de tu sitio web en Visual Studio Code. <br> Sigue cada paso en orden →</p>
+
+    <!-- SCREENSHOT 1: Panel lateral -->
+    <div style="margin-bottom:2rem;">
+      <div class="vscode-screenshot">
+        <div class="vsc-titlebar">
+          <span class="t-dot t-red"></span>
+          <span class="t-dot t-yellow"></span>
+          <span class="t-dot t-green"></span>
+          <span class="vsc-title-text">Visual Studio Code — mi-sitio-web</span>
+        </div>
+        <div class="vsc-body">
+          <div class="vsc-sidebar">
+            <div class="vsc-sidebar-title">EXPLORADOR</div>
+            <div class="vsc-folder">▾ 📁 MI-SITIO-WEB</div>
+            <div class="vsc-folder ft-i1">▾ 📁 assets</div>
+            <div class="vsc-folder ft-i2">▾ 📁 css</div>
+            <div class="vsc-file ft-i3"><span style="color:#264de4">◉</span> styles.css</div>
+            <div class="vsc-folder ft-i2">▾ 📁 js</div>
+            <div class="vsc-file ft-i3"><span style="color:#f7df1e">◉</span> main.js</div>
+            <div class="vsc-folder ft-i2">📁 img</div>
+            <div class="vsc-file ft-i1 active"><span style="color:#e44d26">◉</span> index.html</div>
+            <div class="vsc-file ft-i1"><span style="color:#4ec9b0">◉</span> README.md</div>
+          </div>
+          <div class="vsc-editor">
+            <div class="vsc-line"><span class="vsc-linenum">1</span><span class="tg">&lt;!</span><span class="kw">DOCTYPE</span> <span class="at">html</span><span class="tg">&gt;</span></div>
+            <div class="vsc-line"><span class="vsc-linenum">2</span><span class="tg">&lt;html</span> <span class="at">lang=</span><span class="vl">"es"</span><span class="tg">&gt;</span></div>
+            <div class="vsc-line"><span class="vsc-linenum">3</span><span class="tg">&lt;head&gt;</span></div>
+            <div class="vsc-line"><span class="vsc-linenum">4</span>&nbsp;&nbsp;<span class="tg">&lt;meta</span> <span class="at">charset=</span><span class="vl">"UTF-8"</span><span class="tg">/&gt;</span></div>
+            <div class="vsc-line"><span class="vsc-linenum">5</span>&nbsp;&nbsp;<span class="tg">&lt;title&gt;</span>Mi Sitio Web<span class="tg">&lt;/title&gt;</span></div>
+            <div class="vsc-line"><span class="vsc-linenum">6</span><span class="tg">&lt;/head&gt;</span></div>
+            <div class="vsc-line" style="background:rgba(0,122,204,0.1)"><span class="vsc-linenum" style="color:var(--blue)">7</span><span class="tg">&lt;body&gt;</span> <span class="cm">&lt;!-- ← cursor aquí --&gt;</span></div>
+          </div>
+        </div>
+        <div class="vsc-terminal-panel">
+          <div class="vsc-terminal-tabs">
+            <div class="vsc-ttab active">TERMINAL</div>
+            <div class="vsc-ttab">PROBLEMAS</div>
+            <div class="vsc-ttab">SALIDA</div>
+          </div>
+          <div class="vsc-terminal-body">
+            <div class="t-line"><span class="t-prompt">~/mi-sitio-web $ </span><span class="t-cmd">mkdir -p assets/css assets/js assets/img</span></div>
+            <div class="t-line"><span class="t-success">✓</span></div>
+            <div class="t-line"><span class="t-prompt">~/mi-sitio-web $ </span><span class="t-cursor"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="annotation"><div class="ann-num">1</div><div>El <strong>panel izquierdo (Explorador)</strong> muestra todos tus archivos. El archivo activo aparece resaltado. Puedes hacer <strong>clic derecho → New File / New Folder</strong> aquí para crear archivos sin usar comandos.</div></div>
+      <div class="annotation" style="margin-top:0.5rem;"><div class="ann-num">2</div><div>El <strong>panel inferior es la Terminal integrada</strong>. Ábrela con <code>(Ctrl + J)</code> Desde aquí ejecutas todos los comandos del tutorial sin salir de VS Code.</div></div>
+      <div class="annotation" style="margin-top:0.5rem;"><div class="ann-num">3</div><div>La línea azul en el editor indica donde está el cursor. VS Code resalta la línea activa) automáticamente para que nunca pierdas de vista dónde estás.</div></div>
+    </div>
+     
+    <div class="divider"></div>
+
+    <!-- Dos métodos: Visual vs Terminal -->
+    <span class="section-eyebrow">// método 1 — forma visual (recomendada para principiantes)</span>
+    <div class="steps" style="margin-bottom:2rem;">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Abre VS Code y ve a Archivo → Abrir Carpeta</div><div class="step-text">Navega a donde quieres crear tu proyecto (por ejemplo el Escritorio). Crea una carpeta nueva desde el explorador de Windows/Mac y luego selecciónala. VS Code se enfocará en esa carpeta.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Crea las carpetas desde el Explorador de VS Code</div><div class="step-text">En el panel izquierdo, <strong>haz clic derecho en el espacio vacío</strong> debajo del nombre del proyecto. Verás el menú: selecciona <strong>"New Folder"</strong>. Escribe el nombre <code>assets</code> y presiona Enter. Repite: dentro de <code>assets</code> crea <code>css</code>, <code>js</code> e <code>img</code>.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Crea los archivos principales</div><div class="step-text">Clic derecho en la raíz del proyecto  MI-SITIO-WEB → <strong>"New File"</strong> → escribe <code>index.html</code> → Enter. Repite para <code>README.md</code>. Luego entra a la carpeta <code>assets/css/</code> y crea <code>styles.css</code>. En <code>assets/js/</code> crea <code>main.js</code>.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">Instala Live Server y actívalo</div><div class="step-text">Ve al ícono de extensiones (<code>Ctrl+Shift+X</code>), busca <strong>"Live Server"</strong>, instálala. Luego abre <code>index.html</code>, haz clic derecho dentro del archivo → <strong>"Open with Live Server"</strong>. Tu página se abrirá en el navegador en <code>http://127.0.0.1:5500</code>.</div></div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <span class="section-eyebrow">// método 2 — desde la terminal de VS Code (más rápido)</span>
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-filename"><span style="color:var(--green)">▶</span>&nbsp;TERMINAL — VS Code (Ctrl + J)</span>
+          <span class="code-lang">bash</span>
+          <button class="code-copy" onclick="copyCode(this)">Copiar</button>
+        </div>
+        <pre><span class="cm"># ── PASO 1: Ve a tu escritorio (o donde prefieras) ──</span>
+<span class="cm"># Windows:</span>
+<span class="fn">cd</span> <span class="st">C:\Users\TuNombre\Desktop</span>
+<span class="cm"># Mac / Linux:</span>
+<span class="fn">cd</span> ~/Desktop
+
+<span class="cm"># ── PASO 2: Crea la carpeta principal ──</span>
+<span class="fn">mkdir</span> mi-sitio-web
+<span class="fn">cd</span> mi-sitio-web
+
+<span class="cm"># ── PASO 3: Crea todas las subcarpetas de una vez ──</span>
+<span class="cm"># -p crea carpetas anidadas sin error si ya existen</span>
+<span class="fn">mkdir</span> -p assets/css assets/js assets/img
+
+<span class="cm"># ── PASO 4: Crea los archivos vacíos ──</span>
+<span class="cm"># Windows (PowerShell):</span>
+<span class="fn">New-Item</span> index.html, README.md
+<span class="fn">New-Item</span> assets/css/styles.css
+<span class="fn">New-Item</span> assets/js/main.js
+
+<span class="cm"># Mac / Linux:</span>
+<span class="fn">touch</span> index.html README.md
+<span class="fn">touch</span> assets/css/styles.css assets/js/main.js
+
+<span class="cm"># ── PASO 5: Verifica que todo está bien ──</span>
+<span class="cm"># Windows:</span>
+<span class="fn">tree</span>
+<span class="cm"># Mac / Linux:</span>
+<span class="fn">find</span> . -not -path <span class="st">'*/\.*'</span>
+
+<span class="cm"># ── PASO 6: Abre VS Code en esta carpeta ──</span>
+<span class="fn">code</span> .</pre>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="file-tree">
+          <div><span class="ft-folder">📁 mi-sitio-web/</span></div>
+          <div class="ft-i1"><span class="ft-folder">📁 assets/</span></div>
+          <div class="ft-i2"><span class="ft-folder">📁 css/</span></div>
+          <div class="ft-i3"><span class="ft-css">styles.css</span> <span class="ft-desc">← todos los estilos</span></div>
+          <div class="ft-i2"><span class="ft-folder">📁 js/</span></div>
+          <div class="ft-i3"><span class="ft-js">main.js</span> <span class="ft-desc">← código JavaScript</span></div>
+          <div class="ft-i2"><span class="ft-folder">📁 img/</span></div>
+          <div class="ft-i3" style="color:var(--muted);font-size:0.72rem;font-style:italic;padding-left:5.2rem">(tus imágenes aquí)</div>
+          <div class="ft-i1"><span class="ft-html">index.html</span> <span class="ft-desc">← página principal</span></div>
+          <div class="ft-i1"><span class="ft-md">README.md</span> <span class="ft-desc">← descripción del proyecto</span></div>
+        </div>
+        <div class="tip green"><span class="tip-icon">💡</span><div><strong>¿Por qué esta estructura?</strong> Separar CSS, JS e imágenes en carpetas distintas hace que el proyecto sea mantenible. Cuando el proyecto crezca a 20 archivos, sabrás exactamente dónde está cada cosa. Los profesionales siempre separan responsabilidades.</div></div>
+        <div class="tip yellow"><span class="tip-icon">📌</span><div><strong>Regla importante:</strong> Nunca uses espacios ni caracteres especiales (á, é, ñ) en nombres de archivos o carpetas. Usa siempre guiones: <code>mi-sitio</code> no <code>mi sitio</code>.</div></div>
+      </div>
+    </div>
+    
+     <div class="divider"></div>
+
+    <!-- Qué va en cada archivo -->
+    <span class="section-eyebrow">// qué contiene cada archivo y por qué existe</span>
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div class="card"><div class="card-title"><span style="color:#e44d26">◉</span> index.html</div><div class="card-text">Es la <strong>puerta de entrada</strong> de tu sitio web. Cuando alguien visita tu dominio, el servidor busca primero un archivo llamado exactamente <code>index.html</code>. Aquí va toda la estructura: navbar, secciones, footer. Si tienes varias páginas, crea <code>about.html</code>, <code>contacto.html</code>, etc.</div></div>
+      <div class="card"><div class="card-title"><span style="color:#264de4">◉</span> assets/css/styles.css</div><div class="card-text">Aquí van todos los <strong>estilos visuales</strong>: colores, fuentes, tamaños, animaciones. Separarlo del HTML es una buena práctica obligatoria. Si en el futuro quieres cambiar el color principal de tu sitio, solo editas una variable en este archivo y cambia en toda la web.</div></div>
+      <div class="card"><div class="card-title"><span style="color:#f7df1e">◉</span> assets/js/main.js</div><div class="card-text">Aquí va la <strong>lógica interactiva</strong>: menú hamburguesa, animaciones al hacer scroll, formularios, etc. Se carga al final del body para no bloquear la visualización del HTML. Si tienes mucho JavaScript, puedes dividirlo en múltiples archivos como <code>menu.js</code>, <code>slider.js</code>.</div></div>
+      <div class="card"><div class="card-title"><span style="color:#4ec9b0">◉</span> README.md</div><div class="card-text">Un archivo de texto en formato Markdown que <strong>describe tu proyecto</strong>. Cuando subas tu código a GitHub, este archivo se muestra automáticamente como la presentación del repositorio. Escribe aquí: de qué trata el proyecto, cómo instalarlo, qué tecnologías usa.</div></div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-label">✦ Prompt para pedirle la estructura a Claude</div>
+      <div class="prompt-text">"Voy a crear un sitio web para <em>[mi restaurante / mi portafolio / mi tienda de ropa]</em>. La página tendrá: navbar, hero, sección de servicios o productos, sección sobre mí/nosotros, sección de contacto y footer. Dame: (1) la estructura completa de carpetas y archivos que necesito, (2) los comandos exactos para crearla en la terminal de VS Code en Windows, Linux y/o en Mac, (3) una descripción de qué irá en cada archivo." 
+      <br>Debemos ser específicos y claros en lo que vamos a solicitar a Claude.o cualquier IA</div>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+
+   <!-- VIDEO: Instalar VS Code -->
+    <div class="video-section">
+      <div class="video-section-title">▶ Videos de referencia — Configuración inicial · midudev &amp; MoureDev</div>
+      <div class="video-grid">
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/VUsdD_Clmyw" title="Configura VS Code como un profesional — midudev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>Configura VS Code como un profesional</strong> — midudev · extensiones, tema, fuente</div>
+        </div>
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/Ei1y51K8jQk" title="Visual Studio Code desde cero — MoureDev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>VS Code desde cero para programadores</strong> — HolaMundo · instalación y terminal</div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="color:var(--blue)">&lt;</span>Tutorial-Web-IA · Para principiantes con estándar profesional<span style="color:var(--green)">/</span><span style="color:var(--blue)">&gt;</span>
+  </div>
+  <p>Creado con <strong>HTML5 · CSS3 · JavaScript</strong> · Asistido por <strong>Claude (Anthropic)</strong></p>
+  <p><strong>La practica constante hace que puedas hacer cosas increíbles, utiliza herramientas a tu favor </strong></p> <br>
+  <span>↓ Creadores del Tutorial ↓</span> 
+ <p class="footer-autores">
+  <span>Edwin Alexander Medina Martínez</span>
+  <span class="separador"> & </span>
+  <span>Miguel Ángel Palacio Rodríguez</span>
+</p> <br>
+  <p style="margin-top:0.3rem;">©2026 — Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

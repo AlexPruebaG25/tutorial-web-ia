@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <!-- Meta Información General -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Título de la Página -->
+  <title>Tutorial — Tema 3</title>
+  <!-- Descripción de la Página -->
+  <meta name="description" content="Tutorial para crear páginas web con Inteligencia Artificial usando Claude AI y Visual Studio Code. HTML5, CSS3, JavaScript desde cero."/>
+  <meta name="keywords" content="tutorial web, inteligencia artificial, Claude AI, HTML5, CSS3, JavaScript, VS Code, principiantes, SENA"/>
+  <!-- Meta para SEO -->
+  <meta name="robots" content="follow, index"/>
+  <link rel="canonical" href=""/>
+  <!-- Seguridad: Política de contenido -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com;"/> 
+  <meta name="author" content="Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez">
+  <!-- Seguridad -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <!-- Enlace a Estilos CSS -->
+  <link rel="stylesheet" href="../styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+   <!-- Scripts JavaScript -->
+  <script src="../java.js" defer></script>
+</head>
+<body>
+     <!-- BOTÓN VOLVER  A Pagina Principal-->
+     <a href="../index.html" class="btn-home"> ← Volver</a>
+ 
+<!-- ════════════════════════════════════════
+     TEMA 3 — CSS
+════════════════════════════════════════ -->
+<section class="tema-section" id="tema3">
+  <div class="container">
+    <div class="tema-header">
+      <div class="tema-number">03</div>
+      <div>
+        <span class="tema-tag">// el aspecto visual de todo lo que el usuario ve</span>
+        <h2 class="tema-title">CSS <span class="accent">Profesional</span> con IA — Variables, Responsive y Diseño</h2>
+        <p class="tema-desc">CSS moderno no es escribir estilos uno por uno. Es crear un sistema de diseño coherente con variables, una arquitectura organizada y un enfoque Mobile First que funciona en cualquier dispositivo.</p>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:2rem;">
+      <div class="card"><span class="card-icon">🎨</span><div class="card-title">Variables CSS (:root)</div><div class="card-text">Define <strong>todos tus colores, fuentes y tamaños</strong> como variables en un solo lugar. Si cambias el color primario, cambia en toda la web automáticamente. Sin variables, modificar colores significa buscar y reemplazar cientos de líneas.</div></div>
+      <div class="card"><span class="card-icon">📱</span><div class="card-title">Mobile First</div><div class="card-text">Diseña <strong>primero para móvil</strong>, luego agrega estilos para pantallas más grandes. Es más fácil que al revés y da mejor rendimiento porque los móviles solo cargan lo que necesitan.</div></div>
+      <div class="card"><span class="card-icon">📐</span><div class="card-title">CSS Grid + Flexbox</div><div class="card-text"><strong>Grid</strong> para layouts de página completos (filas y columnas). <strong>Flexbox</strong> para alinear elementos dentro de un componente. Son complementarios, no excluyentes. Pídele a Claude que use ambos según el contexto.</div></div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <span class="section-eyebrow">// arquitectura CSS profesional — cómo organizar tu styles.css</span>
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-filename"><span style="color:#264de4">◉</span>&nbsp;assets/css/styles.css</span>
+          <span class="code-lang">css</span>
+          <button class="code-copy" onclick="copyCode(this)">Copiar</button>
+        </div>
+        <pre><span class="cm">/* ════════════════════════════════
+   1. VARIABLES GLOBALES
+   Cambia aquí → cambia en todo
+════════════════════════════════ */</span>
+<span class="sel">:root</span> {
+  <span class="cm">/* Colores principales */</span>
+  <span class="pr">--color-primario</span>:    <span class="nm">#2563eb</span>;
+  <span class="pr">--color-primario-hover</span>:<span class="nm">#1d4ed8</span>;
+  <span class="pr">--color-secundario</span>:  <span class="nm">#10b981</span>;
+  <span class="pr">--color-fondo</span>:       <span class="nm">#0f172a</span>;
+  <span class="pr">--color-superficie</span>:  <span class="nm">#1e293b</span>;
+  <span class="pr">--color-texto</span>:       <span class="nm">#f1f5f9</span>;
+  <span class="pr">--color-texto-suave</span>: <span class="nm">#94a3b8</span>;
+  <span class="pr">--color-borde</span>:       <span class="nm">#334155</span>;
+
+  <span class="cm">/* Tipografía */</span>
+  <span class="pr">--fuente-titulo</span>:  <span class="st">'Poppins'</span>, sans-serif;
+  <span class="pr">--fuente-cuerpo</span>:  <span class="st">'Inter'</span>, sans-serif;
+  <span class="pr">--texto-sm</span>:  <span class="nm">0.875rem</span>;
+  <span class="pr">--texto-md</span>:  <span class="nm">1rem</span>;
+  <span class="pr">--texto-lg</span>:  <span class="nm">1.25rem</span>;
+  <span class="pr">--texto-xl</span>:  <span class="nm">1.5rem</span>;
+  <span class="pr">--texto-2xl</span>: <span class="nm">2rem</span>;
+  <span class="pr">--texto-3xl</span>: <span class="nm">3rem</span>;
+
+  <span class="cm">/* Espaciados */</span>
+  <span class="pr">--espacio-xs</span>: <span class="nm">0.25rem</span>;
+  <span class="pr">--espacio-sm</span>: <span class="nm">0.5rem</span>;
+  <span class="pr">--espacio-md</span>: <span class="nm">1rem</span>;
+  <span class="pr">--espacio-lg</span>: <span class="nm">1.5rem</span>;
+  <span class="pr">--espacio-xl</span>: <span class="nm">2rem</span>;
+  <span class="pr">--espacio-2xl</span>:<span class="nm">4rem</span>;
+
+  <span class="cm">/* Otros */</span>
+  <span class="pr">--radio</span>:    <span class="nm">12px</span>;
+  <span class="pr">--radio-lg</span>: <span class="nm">20px</span>;
+  <span class="pr">--sombra</span>:   <span class="nm">0 4px 20px rgba(0,0,0,0.3)</span>;
+  <span class="pr">--transicion</span>:<span class="nm">0.25s ease</span>;
+}
+
+<span class="cm">/* ════════════════════════════════
+   2. RESET Y BASE
+════════════════════════════════ */</span>
+<span class="sel">*</span>, <span class="sel">*::before</span>, <span class="sel">*::after</span> {
+  <span class="pr">box-sizing</span>: <span class="nm">border-box</span>;
+  <span class="pr">margin</span>: <span class="nm">0</span>;
+  <span class="pr">padding</span>: <span class="nm">0</span>;
+}
+<span class="sel">html</span> { <span class="pr">scroll-behavior</span>: <span class="nm">smooth</span>; }
+<span class="sel">body</span> {
+  <span class="pr">background</span>: <span class="kw">var</span>(<span class="pr">--color-fondo</span>);
+  <span class="pr">color</span>: <span class="kw">var</span>(<span class="pr">--color-texto</span>);
+  <span class="pr">font-family</span>: <span class="kw">var</span>(<span class="pr">--fuente-cuerpo</span>);
+  <span class="pr">line-height</span>: <span class="nm">1.7</span>;
+}
+<span class="sel">img</span> {
+  <span class="pr">max-width</span>: <span class="nm">100%</span>; <span class="cm">/* imágenes nunca se salen */</span>
+  <span class="pr">display</span>: <span class="nm">block</span>;
+}
+
+<span class="cm">/* ════════════════════════════════
+   3. LAYOUT RESPONSIVE — Mobile First
+   Diseñamos para móvil primero,
+   luego ampliamos con media queries.
+════════════════════════════════ */</span>
+<span class="sel">.grid-servicios</span> {
+  <span class="pr">display</span>: <span class="nm">grid</span>;
+  <span class="pr">grid-template-columns</span>: <span class="nm">1fr</span>; <span class="cm">/* móvil: 1 col */</span>
+  <span class="pr">gap</span>: <span class="kw">var</span>(<span class="pr">--espacio-md</span>);
+}
+
+<span class="kw">@media</span> (<span class="pr">min-width</span>: <span class="nm">640px</span>) { <span class="cm">/* pantalla pequeña */</span>
+  <span class="sel">.grid-servicios</span> {
+    <span class="pr">grid-template-columns</span>: <span class="nm">repeat(2, 1fr)</span>;
+  }
+}
+
+<span class="kw">@media</span> (<span class="pr">min-width</span>: <span class="nm">1024px</span>) { <span class="cm">/* desktop */</span>
+  <span class="sel">.grid-servicios</span> {
+    <span class="pr">grid-template-columns</span>: <span class="nm">repeat(3, 1fr)</span>;
+  }
+}
+
+<span class="cm">/* ════════════════════════════════
+   4. COMPONENTES — Navbar
+════════════════════════════════ */</span>
+<span class="sel">header</span> {
+  <span class="pr">position</span>: <span class="nm">fixed</span>;
+  <span class="pr">top</span>: <span class="nm">0</span>; <span class="pr">left</span>: <span class="nm">0</span>; <span class="pr">right</span>: <span class="nm">0</span>;
+  <span class="pr">background</span>: <span class="nm">rgba(15,23,42,0.9)</span>;
+  <span class="pr">backdrop-filter</span>: <span class="nm">blur(12px)</span>; <span class="cm">/* vidrio esmerilado */</span>
+  <span class="pr">border-bottom</span>: <span class="nm">1px solid</span> <span class="kw">var</span>(<span class="pr">--color-borde</span>);
+  <span class="pr">z-index</span>: <span class="nm">100</span>;
+  <span class="pr">padding</span>: <span class="kw">var</span>(<span class="pr">--espacio-md</span>) <span class="kw">var</span>(<span class="pr">--espacio-xl</span>);
+  <span class="pr">transition</span>: <span class="nm">background</span> <span class="kw">var</span>(<span class="pr">--transicion</span>);
+}
+
+<span class="cm">/* ════════════════════════════════
+   5. UTILIDADES
+════════════════════════════════ */</span>
+<span class="sel">.container</span> {
+  <span class="pr">max-width</span>: <span class="nm">1200px</span>;
+  <span class="pr">margin</span>: <span class="nm">0 auto</span>;
+  <span class="pr">padding</span>: <span class="nm">0</span> <span class="kw">var</span>(<span class="pr">--espacio-xl</span>);
+}</pre>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="card">
+          <div class="card-title">🎨 Cómo elegir una buena paleta de colores</div>
+          <div class="card-text" style="margin-bottom:1rem;">Un error común es usar demasiados colores. La regla es: <strong>3 colores base máximo</strong> — uno primario para acciones, uno de acento para destacar, uno neutro para fondos y textos. Herramientas recomendadas:</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--muted)"><span style="color:var(--blue-light);font-family:var(--font-code)">→</span> <strong style="color:var(--white)">coolors.co</strong> — generador de paletas</div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--muted)"><span style="color:var(--blue-light);font-family:var(--font-code)">→</span> <strong style="color:var(--white)">color.adobe.com</strong> — combinaciones por teoría del color</div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--muted)"><span style="color:var(--blue-light);font-family:var(--font-code)">→</span> <strong style="color:var(--white)">contrast-ratio.com</strong> — verifica contraste WCAG</div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--muted)"><span style="color:var(--blue-light);font-family:var(--font-code)">→</span> <strong style="color:var(--white)">tailwindcss.com/docs/customizing-colors</strong> — paleta profesional lista</div>
+          </div>
+        </div>
+        <div class="tip blue"><span class="tip-icon">📌</span><div><strong>¿Por qué Mobile First?</strong> Más del 60% del tráfico web viene de celulares. Además, Google usa la versión móvil de tu sitio para indexarlo (Mobile-First Indexing). Si tu sitio se ve mal en móvil, Google lo penaliza en posicionamiento.</div></div>
+        <div class="tip yellow"><span class="tip-icon">⚡</span><div><strong>Rendimiento CSS:</strong> Evita poner <code>@import</code> dentro del CSS — usa siempre <code>&lt;link&gt;</code> en el HTML. Cada <code>@import</code> bloquea la carga. Claude a veces lo genera así por inercia — corrígelo.</div></div>
+        <div class="tip green"><span class="tip-icon">🔧</span><div><strong>Herramienta de depuración:</strong> En Chrome, presiona F12 → pestaña "Elements". Puedes hacer clic en cualquier elemento y ver / editar su CSS en tiempo real sin tocar el archivo. Ideal para probar colores y tamaños.</div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+     <!-- videos de referencia -->
+     <div class="video-section">
+      <div class="video-section-title">▶ Videos de referencia — CSS Grid, Flexbox y Responsive · midudev</div>
+      <div class="video-grid">
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/p_lT7AgpEMU" title="CSS Grid desde cero — midudev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>CSS Grid desde cero</strong>  layout responsive profesional</div>
+        </div>
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/TlJbu0BMLaY" title="Flexbox CSS desde cero — midudev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>Flexbox desde cero</strong> — midudev · CURSO DE CSS COMPLETO: De Principiante a Front-End 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card" style="margin-top:1.5rem;">
+      <div class="prompt-label">✦ Prompt para pedirle el CSS a Claude</div>
+      <div class="prompt-text">"Crea el CSS completo para mi sitio web de <em>[tipo de negocio]</em>. Requisitos: (1) Variables CSS en :root para todos los colores, tipografías y espaciados, (2) reset básico con box-sizing border-box, (3) Mobile First con media queries en 640px y 1024px, (4) navbar fija con backdrop-filter blur para efecto vidrio, (5) hero con degradado y texto centrado, (6) grid de servicios que pase de 1 a 2 a 3 columnas según el dispositivo, (7) botones con transición en hover, (8) footer con flexbox. Paleta de colores: <em>[describe los colores que quieres o pide que te sugiera una]</em>. Comenta cada sección del CSS."</div>
+    </div>
+  </div>
+</section>
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="color:var(--blue)">&lt;</span>Tutorial-Web-IA · Para principiantes con estándar profesional<span style="color:var(--green)">/</span><span style="color:var(--blue)">&gt;</span>
+  </div>
+  <p>Creado con <strong>HTML5 · CSS3 · JavaScript</strong> · Asistido por <strong>Claude (Anthropic)</strong></p>
+  <p><strong>La practica constante hace que puedas hacer cosas increíbles, utiliza herramientas a tu favor </strong></p> <br>
+  <span>↓ Creadores del Tutorial ↓</span> 
+ <p class="footer-autores">
+  <span>Edwin Alexander Medina Martínez</span>
+  <span class="separador"> & </span>
+  <span>Miguel Ángel Palacio Rodríguez</span>
+</p> <br>
+  <p style="margin-top:0.3rem;">©2026 — Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

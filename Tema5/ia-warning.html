@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Meta Información General -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Título de la Página -->
+  <title>Tutorial — Tema 5</title>
+  <!-- Descripción de la Página -->
+  <meta name="description" content="Tutorial para crear páginas web con Inteligencia Artificial usando Claude AI y Visual Studio Code. HTML5, CSS3, JavaScript desde cero."/>
+  <meta name="keywords" content="tutorial web, inteligencia artificial, Claude AI, HTML5, CSS3, JavaScript, VS Code, principiantes, SENA"/>
+  <!-- Meta para SEO -->
+  <meta name="robots" content="follow, index"/>
+  <link rel="canonical" href=""/>
+  <!-- Seguridad: Política de contenido -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com;"/>
+  <!-- Autor de la Página -->
+  <meta name="author" content="Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez">
+  <!-- Seguridad -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <!-- Enlace a Estilos CSS -->
+  <link rel="stylesheet" href="../styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+   <!-- Scripts JavaScript -->
+  <script src="../java.js" defer></script>
+</head>
+<body>
+  <!-- BOTÓN VOLVER  A Pagina Principal-->
+     <a href="../index.html" class="btn-home"> ← Volver</a>
+<!-- ════════════════════════════════════════
+     SECCIÓN: LA IA NO SIEMPRE TIENE RAZÓN
+════════════════════════════════════════ -->
+<section class="ai-warning-section" id="ia-warning">
+  <div class="container">
+    <div class="ai-warning-header">
+      <span class="ai-warning-icon">⚠️</span>
+      <div>
+        <span class="section-eyebrow" style="color:var(--yellow)">// lectura obligatoria antes de usar IA para código</span>
+        <h2 class="section-title" style="color:var(--yellow)">La IA <span style="color:var(--red)">NO siempre</span> tiene razón</h2>
+        <p class="section-sub" style="max-width:640px;">Claude, ChatGPT y cualquier IA son herramientas poderosas — pero cometen errores. Un profesional usa la IA para acelerar su trabajo, no para sustituir su criterio. Aquí está lo que necesitas saber.</p>
+      </div>
+    </div>
+
+    <!-- Errores comunes de la IA -->
+    <span class="section-eyebrow" style="color:var(--red)">// errores frecuentes que cometen las IAs con código web</span>
+    <div class="ai-mistake-list" style="margin-bottom:2.5rem;">
+      <div class="mistake-card">
+        <div class="mistake-title">🗓️ Información desactualizada</div>
+        <div class="mistake-text">Las IAs tienen una fecha de corte de conocimiento. Pueden generarte código con APIs o sintaxis que <strong>ya están deprecated</strong> (obsoletas). Siempre verifica en la documentación oficial si la función que te dio Claude sigue vigente.</div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-title">🔒 Errores de seguridad</div>
+        <div class="mistake-text">La IA puede generar código con <strong>vulnerabilidades XSS, CSRF o SQL Injection</strong> si no le especificas que quieres código seguro. Nunca copies código que maneja datos de usuarios sin revisarlo o sin pedirle a Claude que lo audite.</div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-title">📦 Dependencias innecesarias</div>
+        <div class="mistake-text">A veces Claude sugiere instalar librerías para cosas que se pueden hacer con CSS o JavaScript nativo moderno. Pregúntale siempre: <strong>"¿Se puede hacer esto sin librerías externas?"</strong></div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-title">🧠 Código que "parece" funcionar</div>
+        <div class="mistake-text">El código puede verse correcto pero tener errores lógicos sutiles. Claude no ejecuta el código antes de dártelo — solo lo predice. <strong>Siempre prueba en el navegador</strong> y revisa la consola (F12) buscando errores en rojo.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Fuentes oficiales -->
+    <span class="section-eyebrow" style="color:var(--yellow)">// fuentes que siempre debes consultar además de la IA</span>
+    <div class="sources-grid" style="margin-bottom:2rem;">
+      <div class="source-card">
+        <div class="source-logo">📖</div>
+        <div class="source-name">MDN Web Docs</div>
+        <div class="source-url">developer.mozilla.org</div>
+        <div class="source-desc">La biblia del desarrollo web. Documentación oficial de HTML, CSS y JavaScript mantenida por Mozilla. Si Claude te da una función, búscala aquí para saber si es correcta y actual.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-logo">🏫</div>
+        <div class="source-name">W3Schools</div>
+        <div class="source-url">w3schools.com</div>
+        <div class="source-desc">Tutoriales interactivos con ejemplos ejecutables en el navegador. Excelente para entender conceptos y probar código sin instalar nada. Ideal para principiantes que quieren ir más allá del tutorial.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-logo">✅</div>
+        <div class="source-name">W3C Validator</div>
+        <div class="source-url">validator.w3.org</div>
+        <div class="source-desc">Validador oficial del HTML generado por Claude. Pega tu código y te dirá exactamente qué está mal, por qué y cómo corregirlo. Úsalo siempre antes de publicar tu sitio.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-logo">💡</div>
+        <div class="source-name">CSS-Tricks</div>
+        <div class="source-url">css-tricks.com</div>
+        <div class="source-desc">Guías avanzadas y ejemplos reales de CSS. Cuando Claude te dé un Grid o un Flexbox que no entiendes, búscalo aquí para verlo explicado visualmente con ejemplos interactivos.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-logo">🔍</div>
+        <div class="source-name">Can I Use</div>
+        <div class="source-url">caniuse.com</div>
+        <div class="source-desc">Indica en qué navegadores funciona una propiedad CSS o API de JavaScript. Si Claude te da <code>backdrop-filter</code> o <code>container queries</code>, aquí verificas si el soporte es suficiente para tu público.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-logo">💬</div>
+        <div class="source-name">Stack Overflow</div>
+        <div class="source-url">stackoverflow.com</div>
+        <div class="source-desc">Si tienes un error que Claude no logra resolver, búscalo aquí. Con millones de preguntas y respuestas verificadas, es muy probable que alguien ya tuvo y resolvió tu mismo problema.</div>
+      </div>
+    </div>
+
+     <div class="divider"></div>
+
+    <!-- Cómo usar la IA correctamente -->
+    <span class="section-eyebrow" style="color:var(--green)">// cómo usar la IA de forma profesional y responsable</span>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Pide explicaciones, no solo código</div><div class="step-text">Cuando Claude te dé código, añade al prompt: <strong>"y explícame línea por línea qué hace cada parte"</strong>. Entender el código es lo que te convierte en desarrollador, no solo copiarlo.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Valida siempre con las fuentes oficiales</div><div class="step-text">Ante cualquier función, propiedad CSS o etiqueta HTML que no reconoces, búscala en <strong>MDN Web Docs</strong>. Si Claude dice que existe y MDN no la tiene, probablemente Claude inventó algo (se llama "alucinación").</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Abre la consola del navegador (F12) siempre</div><div class="step-text">Después de implementar código de Claude, abre la consola (F12 → Console). Si ves texto en rojo, hay un error. Copia ese mensaje de error y pégaselo de vuelta a Claude: <strong>"tengo este error: [pega el error]. Cómo lo corrijo?"</strong></div></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">Itera con Claude, no lo uses una sola vez</div><div class="step-text">El flujo correcto es: pedir → revisar → señalar errores → pedir corrección → revisar de nuevo. Claude mejora con el contexto que le das. Dile qué funciona y qué no, y será más preciso.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-title">Aprende mientras usas la IA</div><div class="step-text">Usa la IA como un senior que te explica, no como una máquina que hace tu tarea. El objetivo es que con cada proyecto que hagas con Claude, necesites pedirle menos cosas porque ya las aprendes tú.</div></div></div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <!-- Videos de referencia -->
+     <span class="section-eyebrow">// videos de referencia para profundizar</span>
+    <div class="video-section">
+      <div class="video-section-title">▶ Videos de referencia — cómo usar la IA</div>
+      <div class="video-grid">
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/BWIhNQ-DvqY" title="Curso de HTML desde cero — midudev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>MoureDev</strong> — Cómo Desarrollé una App en menos de 1 HORA utilizando IA</div>
+        </div>
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/cmep2mdip3k" title="HTML semántico y accesibilidad — MoureDev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>Platzi</strong> — Tutorial de inteligencia artificial para cualquier persona</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip green" style="margin-top:1.5rem;">
+      <span class="tip-icon">🏆</span>
+      <div><strong>La mentalidad correcta:</strong> La IA es un multiplicador de tu capacidad — no un reemplazo. Un programador que usa IA efectivamente no es menos desarrollador. Es uno más eficiente. Pero necesita criterio propio para saber cuándo la IA está equivocada — y eso solo se desarrolla aprendiendo las bases.</div>
+    </div>
+  </div>
+</section>
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="color:var(--blue)">&lt;</span>Tutorial-Web-IA · Para principiantes con estándar profesional<span style="color:var(--green)">/</span><span style="color:var(--blue)">&gt;</span>
+  </div>
+  <p>Creado con <strong>HTML5 · CSS3 · JavaScript</strong> · Asistido por <strong>Claude (Anthropic)</strong></p>
+  <p><strong>La practica constante hace que puedas hacer cosas increíbles, utiliza herramientas a tu favor </strong></p> <br>
+  <span>↓ Creadores del Tutorial ↓</span> 
+ <p class="footer-autores">
+  <span>Edwin Alexander Medina Martínez</span>
+  <span class="separador"> & </span>
+  <span>Miguel Ángel Palacio Rodríguez</span>
+</p> <br>
+  <p style="margin-top:0.3rem;">©2026 — Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

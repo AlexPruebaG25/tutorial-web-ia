@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <!-- Meta Información General -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Título de la Página -->
+  <title>Tutorial — Tema 2</title>
+  <!-- Descripción de la Página -->
+  <meta name="description" content="Tutorial para crear páginas web con Inteligencia Artificial usando Claude AI y Visual Studio Code. HTML5, CSS3, JavaScript desde cero."/>
+  <meta name="keywords" content="tutorial web, inteligencia artificial, Claude AI, HTML5, CSS3, JavaScript, VS Code, principiantes, SENA"/>
+  <!-- Meta para SEO -->
+  <meta name="robots" content="follow, index"/>
+  <link rel="canonical" href=""/> 
+  <!-- Seguridad: Política de contenido -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com;"/>
+  <!-- Autor de la Página -->
+  <meta name="author" content="Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez">
+  <!-- Seguridad -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <!-- Enlace a Estilos CSS -->
+  <link rel="stylesheet" href="../styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+   <!-- Scripts JavaScript -->
+  <script src="../java.js" defer></script>
+</head>
+<body>
+   <!-- BOTÓN VOLVER  A Pagina Principal-->
+     <a href="../index.html" class="btn-home" > ← Volver</a>
+<!-- ════════════════════════════════════════
+     TEMA 2 — HTML5
+════════════════════════════════════════ -->
+<section class="tema-section" id="tema2">
+  <div class="container">
+    <div class="tema-header">
+      <div class="tema-number">02</div>
+      <div>
+        <span class="tema-tag">// el esqueleto semántico de tu página</span>
+        <h2 class="tema-title"><span class="accent">HTML5</span> con IA — Semántica, SEO, Accesibilidad y Seguridad</h2>
+        <p class="tema-desc">HTML5 no es solo escribir etiquetas. Un HTML profesional le habla a Google, a los lectores de pantalla, a los buscadores y protege tu sitio de ataques básicos — todo desde la estructura.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 4 pilares -->
+    <span class="section-eyebrow">// los 4 pilares de un HTML profesional</span>
+    <div class="grid-4" style="margin-bottom:2rem;">
+      <div class="card"><span class="card-icon">🏗️</span><div class="card-title">Semántica</div><div class="card-text">Usar etiquetas con <strong>significado real</strong>. No todo es un <code>&lt;div&gt;</code>. Usa <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</div></div>
+      <div class="card"><span class="card-icon">🔍</span><div class="card-title">SEO</div><div class="card-text">Meta etiquetas correctas, un solo <code>&lt;h1&gt;</code> por página, jerarquía <code>h1→h2→h3</code>, atributos <code>alt</code> en imágenes y URLs descriptivas.</div></div>
+      <div class="card"><span class="card-icon">♿</span><div class="card-title">Accesibilidad</div><div class="card-text">Atributos <code>aria-label</code>, <code>role</code> y <code>tabindex</code> para que personas con discapacidades visuales puedan navegar tu sitio con lectores de pantalla.</div></div>
+      <div class="card"><span class="card-icon">🔒</span><div class="card-title">Seguridad</div><div class="card-text">Cabeceras HTTP via meta, <code>rel="noopener noreferrer"</code> en enlaces externos, nunca exponer datos sensibles en el HTML público.</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Código HTML completo -->
+    <span class="section-eyebrow">// estructura HTML5 completa y comentada</span>
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-filename"><span style="color:#e44d26">◉</span>&nbsp;index.html</span>
+          <span class="code-lang">html</span>
+          <button class="code-copy" onclick="copyCode(this)">Copiar</button>
+        </div>
+        <pre><span class="cm">&lt;!-- Siempre empieza con DOCTYPE --&gt;</span>
+<span class="op">&lt;!</span><span class="kw">DOCTYPE</span> <span class="at">html</span><span class="op">&gt;</span>
+
+<span class="cm">&lt;!-- lang="es" mejora SEO y accesibilidad --&gt;</span>
+<span class="tg">&lt;html</span> <span class="at">lang=</span><span class="vl">"es"</span><span class="tg">&gt;</span>
+<span class="tg">&lt;head&gt;</span>
+  <span class="cm">&lt;!-- Codificación de caracteres (tildes, ñ) --&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">charset=</span><span class="vl">"UTF-8"</span><span class="tg">/&gt;</span>
+
+  <span class="cm">&lt;!-- Esencial para móviles --&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">name=</span><span class="vl">"viewport"</span>
+        <span class="at">content=</span><span class="vl">"width=device-width, initial-scale=1.0"</span><span class="tg">/&gt;</span>
+
+  <span class="cm">&lt;!-- SEO: título que aparece en Google (50-60 chars) --&gt;</span>
+  <span class="tg">&lt;title&gt;</span>Mi Negocio | Ciudad — Servicio Principal<span class="tg">&lt;/title&gt;</span>
+
+  <span class="cm">&lt;!-- SEO: descripción que aparece en resultados (150-160) --&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">name=</span><span class="vl">"description"</span>
+        <span class="at">content=</span><span class="vl">"Descripción breve y atractiva..."</span><span class="tg">/&gt;</span>
+
+  <span class="cm">&lt;!-- SEO: palabras clave (menos importantes hoy en día) --&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">name=</span><span class="vl">"keywords"</span>
+        <span class="at">content=</span><span class="vl">"palabra1, palabra2, ciudad"</span><span class="tg">/&gt;</span>
+
+  <span class="cm">&lt;!-- SEGURIDAD: previene ataques MIME sniffing --&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">http-equiv=</span><span class="vl">"X-Content-Type-Options"</span>
+        <span class="at">content=</span><span class="vl">"nosniff"</span><span class="tg">/&gt;</span>
+
+  <span class="cm">&lt;!-- CSS externo (siempre en head) --&gt;</span>
+  <span class="tg">&lt;link</span> <span class="at">rel=</span><span class="vl">"stylesheet"</span>
+        <span class="at">href=</span><span class="vl">"assets/css/styles.css"</span><span class="tg">/&gt;</span>
+<span class="tg">&lt;/head&gt;</span>
+
+<span class="tg">&lt;body&gt;</span>
+
+  <span class="cm">&lt;!-- HEADER: siempre uno por página --&gt;</span>
+  <span class="tg">&lt;header</span> <span class="at">role=</span><span class="vl">"banner"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;nav</span> <span class="at">aria-label=</span><span class="vl">"Navegación principal"</span><span class="tg">&gt;</span>
+      <span class="tg">&lt;a</span> <span class="at">href=</span><span class="vl">"#"</span> <span class="at">class=</span><span class="vl">"logo"</span><span class="tg">&gt;</span>Mi Negocio<span class="tg">&lt;/a&gt;</span>
+      <span class="tg">&lt;ul</span> <span class="at">role=</span><span class="vl">"list"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;li&gt;&lt;a</span> <span class="at">href=</span><span class="vl">"#inicio"</span><span class="tg">&gt;</span>Inicio<span class="tg">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="tg">&lt;li&gt;&lt;a</span> <span class="at">href=</span><span class="vl">"#servicios"</span><span class="tg">&gt;</span>Servicios<span class="tg">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="tg">&lt;li&gt;&lt;a</span> <span class="at">href=</span><span class="vl">"#contacto"</span><span class="tg">&gt;</span>Contacto<span class="tg">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="tg">&lt;/ul&gt;</span>
+      <span class="cm">&lt;!-- Botón menú hamburguesa para móvil --&gt;</span>
+      <span class="tg">&lt;button</span> <span class="at">class=</span><span class="vl">"menu-toggle"</span>
+              <span class="at">aria-label=</span><span class="vl">"Abrir menú"</span>
+              <span class="at">aria-expanded=</span><span class="vl">"false"</span><span class="tg">&gt;</span>☰<span class="tg">&lt;/button&gt;</span>
+    <span class="tg">&lt;/nav&gt;</span>
+  <span class="tg">&lt;/header&gt;</span>
+
+  <span class="tg">&lt;main</span> <span class="at">role=</span><span class="vl">"main"</span> <span class="at">id=</span><span class="vl">"contenido-principal"</span><span class="tg">&gt;</span>
+
+    <span class="cm">&lt;!-- Solo 1 h1 por página —
+         el más importante para Google --&gt;</span>
+    <span class="tg">&lt;section</span> <span class="at">id=</span><span class="vl">"inicio"</span> <span class="at">aria-labelledby=</span><span class="vl">"hero-title"</span><span class="tg">&gt;</span>
+      <span class="tg">&lt;h1</span> <span class="at">id=</span><span class="vl">"hero-title"</span><span class="tg">&gt;</span>
+        Tu Título Principal con Keyword
+      <span class="tg">&lt;/h1&gt;</span>
+      <span class="tg">&lt;p&gt;</span>Descripción atractiva...<span class="tg">&lt;/p&gt;</span>
+    <span class="tg">&lt;/section&gt;</span>
+
+    <span class="tg">&lt;section</span> <span class="at">id=</span><span class="vl">"servicios"</span><span class="tg">&gt;</span>
+      <span class="cm">&lt;!-- h2 para secciones principales --&gt;</span>
+      <span class="tg">&lt;h2&gt;</span>Nuestros Servicios<span class="tg">&lt;/h2&gt;</span>
+      <span class="tg">&lt;article&gt;</span>
+        <span class="tg">&lt;h3&gt;</span>Servicio 1<span class="tg">&lt;/h3&gt;</span>
+        <span class="cm">&lt;!-- Imagen con alt descriptivo (SEO) --&gt;</span>
+        <span class="tg">&lt;img</span> <span class="at">src=</span><span class="vl">"assets/img/servicio1.jpg"</span>
+             <span class="at">alt=</span><span class="vl">"Descripción detallada de la imagen"</span>
+             <span class="at">loading=</span><span class="vl">"lazy"</span>
+             <span class="at">width=</span><span class="vl">"400"</span> <span class="at">height=</span><span class="vl">"300"</span><span class="tg">/&gt;</span>
+      <span class="tg">&lt;/article&gt;</span>
+    <span class="tg">&lt;/section&gt;</span>
+
+    <span class="tg">&lt;section</span> <span class="at">id=</span><span class="vl">"contacto"</span><span class="tg">&gt;</span>
+      <span class="tg">&lt;h2&gt;</span>Contáctanos<span class="tg">&lt;/h2&gt;</span>
+      <span class="cm">&lt;!-- Formulario accesible --&gt;</span>
+      <span class="tg">&lt;form</span> <span class="at">action=</span><span class="vl">"#"</span> <span class="at">method=</span><span class="vl">"POST"</span> <span class="at">novalidate</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;label</span> <span class="at">for=</span><span class="vl">"nombre"</span><span class="tg">&gt;</span>Tu nombre<span class="tg">&lt;/label&gt;</span>
+        <span class="tg">&lt;input</span> <span class="at">type=</span><span class="vl">"text"</span> <span class="at">id=</span><span class="vl">"nombre"</span>
+               <span class="at">name=</span><span class="vl">"nombre"</span> <span class="at">required</span>
+               <span class="at">autocomplete=</span><span class="vl">"name"</span><span class="tg">/&gt;</span>
+      <span class="tg">&lt;/form&gt;</span>
+    <span class="tg">&lt;/section&gt;</span>
+
+  <span class="tg">&lt;/main&gt;</span>
+
+  <span class="tg">&lt;footer</span> <span class="at">role=</span><span class="vl">"contentinfo"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;p&gt;</span>© 2025 Mi Negocio. Todos los derechos reservados.<span class="tg">&lt;/p&gt;</span>
+    <span class="cm">&lt;!-- Enlace externo — siempre con noopener --&gt;</span>
+    <span class="tg">&lt;a</span> <span class="at">href=</span><span class="vl">"https://sitioexterno.com"</span>
+       <span class="at">target=</span><span class="vl">"_blank"</span>
+       <span class="at">rel=</span><span class="vl">"noopener noreferrer"</span><span class="tg">&gt;</span>
+      Visitar sitio externo
+    <span class="tg">&lt;/a&gt;</span>
+  <span class="tg">&lt;/footer&gt;</span>
+
+  <span class="cm">&lt;!-- JS siempre al final del body,
+       con defer para no bloquear el HTML --&gt;</span>
+  <span class="tg">&lt;script</span> <span class="at">src=</span><span class="vl">"assets/js/main.js"</span> <span class="at">defer</span><span class="tg">&gt;&lt;/script&gt;</span>
+
+<span class="tg">&lt;/body&gt;</span>
+<span class="tg">&lt;/html&gt;</span></pre>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="tip red"><span class="tip-icon">⛔</span><div><strong>Vulnerabilidades HTML comunes que debes evitar:</strong><br><br>• Nunca escribas contraseñas, tokens de API ni claves privadas en el HTML — cualquiera las ve con F12.<br><br>• Nunca uses <code>onclick="eval(...)"</code> — es una puerta abierta a ataques XSS.<br><br>• Todo enlace a otra web con <code>target="_blank"</code> DEBE tener <code>rel="noopener noreferrer"</code> para evitar el ataque Tabnapping donde la nueva pestaña puede manipular tu página original.</div></div>
+        <div class="tip green"><span class="tip-icon">✅</span><div><strong>Checklist de un buen HTML:</strong><br>☑ Tiene DOCTYPE y lang="es"<br>☑ Solo 1 etiqueta h1 por página<br>☑ Todas las imágenes tienen alt<br>☑ Usa etiquetas semánticas (no todo div)<br>☑ El JS se carga al final con defer<br>☑ Los enlaces externos tienen noopener</div></div>
+        <div class="tip yellow"><span class="tip-icon">📚</span><div><strong>Para verificar tu HTML:</strong> usa el validador oficial <strong>validator.w3.org</strong> — pega tu código y te dice exactamente qué está mal y por qué. Claude puede cometer errores de sintaxis, siempre valida.</div></div>
+      </div>
+    </div>
+     
+    <div class="divider"></div>
+    
+     <!-- Videos de referencia -->
+     <span class="section-eyebrow">// videos de referencia para profundizar</span>
+    <div class="video-section">
+      <div class="video-section-title">▶ Videos de referencia — HTML5 semántico y SEO · midudev</div>
+      <div class="video-grid">
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/3nYLTiY5skU" title="Curso de HTML desde cero — midudev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>Curso de HTML desde cero</strong> — midudev · semántica, estructura y buenas prácticas</div>
+        </div>
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/rbuYtrNUxg4" title="HTML semántico y accesibilidad — MoureDev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>HTML semántico, accesibilidad y SEO</strong> principiantes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card" style="margin-top:1.5rem;">
+      <div class="prompt-label">✦ Prompt para pedirle el HTML a Claude</div>
+      <div class="prompt-text">"Crea el HTML5 completo para un sitio web de <em>[tipo de negocio]</em>. Requisitos obligatorios: DOCTYPE correcto, lang='es', meta charset, meta viewport, meta description optimizada para SEO con las palabras clave <em>[palabras clave de tu negocio]</em>, solo un h1, jerarquía correcta h1/h2/h3, etiquetas semánticas (header, nav, main, sections con id, article donde corresponda, footer), atributos aria-label en nav y botones, rel='noopener noreferrer' en todos los enlaces externos, imágenes con atributos alt descriptivos y loading='lazy', script al final del body con defer. Comenta el código para explicar cada sección."</div>
+    </div>
+  </div>
+</section>
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="color:var(--blue)">&lt;</span>Tutorial-Web-IA · Para principiantes con estándar profesional<span style="color:var(--green)">/</span><span style="color:var(--blue)">&gt;</span>
+  </div>
+  <p>Creado con <strong>HTML5 · CSS3 · JavaScript</strong> · Asistido por <strong>Claude (Anthropic)</strong></p>
+  <p><strong>La practica constante hace que puedas hacer cosas increíbles, utiliza herramientas a tu favor </strong></p> <br>
+  <span>↓ Creadores del Tutorial ↓</span> 
+ <p class="footer-autores">
+  <span>Edwin Alexander Medina Martínez</span>
+  <span class="separador"> & </span>
+  <span>Miguel Ángel Palacio Rodríguez</span>
+</p> <br>
+  <p style="margin-top:0.3rem;">©2026 — Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

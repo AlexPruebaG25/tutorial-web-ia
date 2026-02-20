@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <!-- Meta Información General -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Título de la Página -->
+  <title>Tutorial — Tema 4</title>
+  <!-- Descripción de la Página -->
+  <meta name="description" content="Tutorial para crear páginas web con Inteligencia Artificial usando Claude AI y Visual Studio Code. HTML5, CSS3, JavaScript desde cero."/>
+  <meta name="keywords" content="tutorial web, inteligencia artificial, Claude AI, HTML5, CSS3, JavaScript, VS Code, principiantes, SENA"/>
+  <!-- Meta para SEO -->
+  <meta name="robots" content="follow, index"/>
+  <link rel="canonical" href=""/>
+  <!-- Seguridad: Política de contenido -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com;"/> 
+  <!-- Autor de la Página -->
+  <meta name="author" content="Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez">
+  <!-- Seguridad -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <!-- Enlace a Estilos CSS -->
+  <link rel="stylesheet" href="../styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+   <!-- Scripts JavaScript -->
+  <script src="../java.js" defer></script>
+</head>
+<body>
+   <!-- BOTÓN VOLVER  A Pagina Principal-->
+     <a href="../index.html" class="btn-home"> ← Volver</a>
+<!-- ════════════════════════════════════════
+     TEMA 4 — JAVASCRIPT
+════════════════════════════════════════ -->
+<section class="tema-section" id="tema4">
+  <div class="container">
+    <div class="tema-header">
+      <div class="tema-number">04</div>
+      <div>
+        <span class="tema-tag">// interactividad, rendimiento y experiencia de usuario</span>
+        <h2 class="tema-title"><span class="accent">JavaScript</span> con IA — Rendimiento, Lazy Loading e Interactividad</h2>
+        <p class="tema-desc">JavaScript es el motor de tu página. Mal usado la hace lenta y frustrante. Bien usado la hace viva e impresionante. La clave es cargar solo lo necesario, cuando se necesita.</p>
+      </div>
+    </div>
+
+    <div class="tip red" style="margin-bottom:2rem;"><span class="tip-icon">⚠️</span><div><strong>El problema del JavaScript excesivo:</strong> cada sección de tu página con texto, imágenes y efectos suma peso. Si todo carga al mismo tiempo al abrir la página, el usuario espera segundos antes de ver algo — y se va. La solución se llama <strong>Lazy Loading</strong> y <strong>carga diferida</strong>.</div></div>
+    
+    <div class="divider"></div>
+
+    <span class="section-eyebrow">// conceptos esenciales antes del código</span>
+    <div class="grid-4" style="margin-bottom:2rem;">
+      <div class="card"><span class="card-icon">👁️</span><div class="card-title">Intersection Observer</div><div class="card-text">API nativa del navegador que detecta cuando un elemento <strong>entra o sale del viewport</strong> (la pantalla visible). Sin ella necesitarías escuchar el evento scroll constantemente, lo cual es muy lento.</div></div>
+      <div class="card"><span class="card-icon">🖼️</span><div class="card-title">Lazy Loading de imágenes</div><div class="card-text">Usar <code>data-src</code> en vez de <code>src</code>. Las imágenes no se cargan hasta que el usuario llega a ellas. Ahorra <strong>datos y tiempo de carga</strong> — especialmente en móviles con internet lento.</div></div>
+      <div class="card"><span class="card-icon">🍔</span><div class="card-title">Menú Hamburguesa</div><div class="card-text">En móvil el navbar se oculta detrás de un botón con tres líneas. JavaScript escucha el clic y <strong>agrega/quita una clase CSS</strong> que muestra u oculta el menú con una animación.</div></div>
+      <div class="card"><span class="card-icon">☝️</span><div class="card-title">Back to Top</div><div class="card-text">Botón que aparece cuando el usuario hace scroll hacia abajo. Al hacer clic regresa al inicio con <code>scrollTo({ behavior: 'smooth' })</code>. Mejora notablemente la experiencia en páginas largas.</div></div>
+    </div>
+     
+    <div class="divider"></div>
+
+    <span class="section-eyebrow">// código JavaScript completo y comentado</span>
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-filename"><span style="color:#f7df1e">◉</span>&nbsp;assets/js/main.js</span>
+          <span class="code-lang">javascript</span>
+          <button class="code-copy" onclick="copyCode(this)">Copiar</button>
+        </div>
+        <pre><span class="cm">// ════════════════════════════════════════
+// main.js — Generado con Claude AI
+// Cargado con defer: no bloquea el HTML
+// ════════════════════════════════════════</span>
+
+<span class="cm">// ── 1. ESPERAR A QUE EL DOM ESTÉ LISTO ──
+// El documento debe estar cargado antes
+// de intentar acceder a cualquier elemento.</span>
+document.<span class="fn">addEventListener</span>(<span class="st">'DOMContentLoaded</span>', () => {
+
+  <span class="cm">// ── 2. MENÚ HAMBURGUESA ──</span>
+  <span class="kw">const</span> btnMenu   = document.<span class="fn">querySelector</span>(<span class="st">'.menu-toggle'</span>);
+  <span class="kw">const</span> navLinks  = document.<span class="fn">querySelector</span>(<span class="st">'.nav-links'</span>);
+
+  <span class="kw">if</span> (btnMenu && navLinks) {
+    btnMenu.<span class="fn">addEventListener</span>(<span class="st">'click'</span>, () => {
+      <span class="kw">const</span> abierto = navLinks.classList.<span class="fn">toggle</span>(<span class="st">'abierto'</span>);
+      <span class="cm">// Accesibilidad: avisa a lectores de pantalla</span>
+      btnMenu.<span class="fn">setAttribute</span>(<span class="st">'aria-expanded'</span>, abierto);
+    });
+
+    <span class="cm">// Cierra el menú al hacer clic en un enlace</span>
+    navLinks.<span class="fn">querySelectorAll</span>(<span class="st">'a'</span>).<span class="fn">forEach</span>(link => {
+      link.<span class="fn">addEventListener</span>(<span class="st">'click'</span>, () => {
+        navLinks.classList.<span class="fn">remove</span>(<span class="st">'abierto'</span>);
+        btnMenu.<span class="fn">setAttribute</span>(<span class="st">'aria-expanded'</span>, <span class="kw">false</span>);
+      });
+    });
+  }
+
+  <span class="cm">// ── 3. LAZY LOADING — Imágenes diferidas ──
+  // Busca todas las imágenes con data-src
+  // Las carga solo cuando son visibles.</span>
+  <span class="kw">const</span> imagenesDiferidas = document
+    .<span class="fn">querySelectorAll</span>(<span class="st">'img[data-src]'</span>);
+
+  <span class="kw">const</span> imgObserver = <span class="kw">new</span> <span class="fn">IntersectionObserver</span>(
+    (entries, obs) => {
+      entries.<span class="fn">forEach</span>(entry => {
+        <span class="kw">if</span> (!entry.isIntersecting) <span class="kw">return</span>;
+        <span class="kw">const</span> img = entry.target;
+        img.src = img.dataset.src;        <span class="cm">// carga la imagen</span>
+        img.<span class="fn">removeAttribute</span>(<span class="st">'data-src'</span>);  <span class="cm">// limpia el atributo</span>
+        img.classList.<span class="fn">add</span>(<span class="st">'cargada'</span>);   <span class="cm">// para animar con CSS</span>
+        obs.<span class="fn">unobserve</span>(img);             <span class="cm">// deja de observar</span>
+      });
+    },
+    { rootMargin: <span class="st">'200px'</span> } <span class="cm">// carga 200px antes de aparecer</span>
+  );
+
+  imagenesDiferidas.<span class="fn">forEach</span>(img => imgObserver.<span class="fn">observe</span>(img));
+
+  <span class="cm">// ── 4. ANIMACIONES AL HACER SCROLL ──
+  // Las secciones aparecen con fade-in
+  // cuando el usuario llega a ellas.</span>
+  <span class="kw">const</span> secciones = document
+    .<span class="fn">querySelectorAll</span>(<span class="st">'.animar-entrada'</span>);
+
+  <span class="kw">const</span> animObserver = <span class="kw">new</span> <span class="fn">IntersectionObserver</span>(
+    (entries) => {
+      entries.<span class="fn">forEach</span>(entry => {
+        <span class="kw">if</span> (entry.isIntersecting) {
+          entry.target.classList.<span class="fn">add</span>(<span class="st">'visible'</span>);
+          animObserver.<span class="fn">unobserve</span>(entry.target);
+        }
+      });
+    },
+    { threshold: <span class="nm">0.15</span> }
+  );
+
+  secciones.<span class="fn">forEach</span>(el => animObserver.<span class="fn">observe</span>(el));
+
+  <span class="cm">// ── 5. BOTÓN VOLVER ARRIBA ──</span>
+  <span class="kw">const</span> btnTop = document.<span class="fn">getElementById</span>(<span class="st">'back-to-top'</span>);
+
+  <span class="kw">if</span> (btnTop) {
+    window.<span class="fn">addEventListener</span>(<span class="st">'scroll'</span>, () => {
+      btnTop.classList.<span class="fn">toggle</span>(<span class="st">'visible'</span>, window.scrollY > <span class="nm">400</span>);
+    }, { passive: <span class="kw">true</span> }); <span class="cm">// passive = mejor rendimiento</span>
+
+    btnTop.<span class="fn">addEventListener</span>(<span class="st">'click'</span>, () => {
+      window.<span class="fn">scrollTo</span>({ top: <span class="nm">0</span>, behavior: <span class="st">'smooth'</span> });
+    });
+  }
+
+  <span class="cm">// ── 6. NAVBAR — cambio de estilo al hacer scroll ──</span>
+  <span class="kw">const</span> header = document.<span class="fn">querySelector</span>(<span class="st">'header'</span>);
+  <span class="kw">if</span> (header) {
+    window.<span class="fn">addEventListener</span>(<span class="st">'scroll'</span>, () => {
+      header.classList.<span class="fn">toggle</span>(<span class="st">'scrolled'</span>, window.scrollY > <span class="nm">60</span>);
+    }, { passive: <span class="kw">true</span> });
+  }
+
+}); <span class="cm">// fin DOMContentLoaded</span>
+
+<span class="cm">/* CSS que va en styles.css para las animaciones:
+
+.animar-entrada {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animar-entrada.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+img[data-src] { opacity: 0; transition: opacity 0.4s; }
+img.cargada   { opacity: 1; }
+header.scrolled { background: rgba(15,23,42,0.98); }
+*/</span></pre>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="card">
+          <div class="card-title">⚡ Por qué usar passive: true en scroll</div>
+          <div class="card-text">Cuando el navegador detecta un listener de scroll, asume que podrías llamar a <code>preventDefault()</code> y espera antes de hacer scroll. Con <code>passive: true</code> le dices "nunca voy a bloquear el scroll" y el navegador puede hacer scroll inmediatamente. Resultado: scroll mucho más fluido en móviles.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">🖼️ Cómo usar las imágenes con lazy loading</div>
+          <div class="card-text" style="margin-bottom:0.6rem;">En el HTML cambia <code>src</code> por <code>data-src</code>:</div>
+          <div class="code-wrap" style="font-size:0.72rem;">
+            <pre style="padding:0.8rem;font-size:0.72rem;"><span class="cm">&lt;!-- Antes (carga inmediata) --&gt;</span>
+<span class="tg">&lt;img</span> <span class="at">src=</span><span class="vl">"foto.jpg"</span> <span class="at">alt=</span><span class="vl">"..."</span><span class="tg">/&gt;</span>
+
+<span class="cm">&lt;!-- Después (carga diferida) --&gt;</span>
+<span class="tg">&lt;img</span> <span class="at">data-src=</span><span class="vl">"foto.jpg"</span>
+     <span class="at">src=</span><span class="vl">"placeholder.jpg"</span>
+     <span class="at">alt=</span><span class="vl">"Descripción"</span>
+     <span class="at">loading=</span><span class="vl">"lazy"</span><span class="tg">/&gt;</span></pre>
+          </div>
+        </div>
+        <div class="tip green"><span class="tip-icon">✅</span><div><strong>Buenas prácticas de JS:</strong><br>☑ Siempre verifica que el elemento existe antes de usarlo (<code>if (elemento)</code>)<br>☑ Usa <code>const</code> y <code>let</code>, nunca <code>var</code><br>☑ Carga el script con <code>defer</code> en el HTML<br>☑ Usa <code>passive: true</code> en listeners de scroll</div></div>
+        <div class="tip red"><span class="tip-icon">🚫</span><div><strong>Errores comunes que Claude puede generar:</strong> scripts con <code>document.write()</code> (obsoleto y peligroso), uso de <code>innerHTML</code> con datos del usuario sin sanitizar (vulnerabilidad XSS), y selectores sin verificación de existencia que rompen la consola.</div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+     
+    <!-- videos de referencia-->
+    <div class="video-section">
+      <div class="video-section-title">▶ Videos de referencia — JavaScript moderno · midudev &amp; MoureDev</div>
+      <div class="video-grid">
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/Z34BF9PCfYg" title="JavaScript desde cero — midudev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>JavaScript desde cero</strong> — midudev · ES6+, DOM, eventos</div>
+        </div>
+        <div class="video-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/1glVfFxj8a4" title="Curso JavaScript desde cero — MoureDev" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-caption"><strong>Curso de JavaScript desde cero</strong> — MoureDev · 6h, 130 ejercicios, gratis</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card" style="margin-top:1.5rem;">
+      <div class="prompt-label">✦ Prompt para pedirle el JavaScript a Claude</div>
+      <div class="prompt-text">"Crea el JavaScript completo para mi sitio web. Necesito: (1) menú hamburguesa para móviles que toggle la clase 'abierto' en el nav y actualice el aria-expanded para accesibilidad, (2) lazy loading para imágenes con data-src usando IntersectionObserver, (3) animaciones de entrada al scroll para elementos con clase 'animar-entrada', (4) botón back-to-top que aparezca después de 400px de scroll y suba suavemente, (5) header que cambie de estilo al hacer scroll. Todo en vanilla JavaScript ES6+, sin librerías externas, con passive:true en todos los listeners de scroll, verificando que cada elemento existe antes de usarlo. Comenta cada sección."</div>
+    </div>
+  </div>
+</section>
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="color:var(--blue)">&lt;</span>Tutorial-Web-IA · Para principiantes con estándar profesional<span style="color:var(--green)">/</span><span style="color:var(--blue)">&gt;</span>
+  </div>
+  <p>Creado con <strong>HTML5 · CSS3 · JavaScript</strong> · Asistido por <strong>Claude (Anthropic)</strong></p>
+  <p><strong>La practica constante hace que puedas hacer cosas increíbles, utiliza herramientas a tu favor </strong></p> <br>
+  <span>↓ Creadores del Tutorial ↓</span> 
+ <p class="footer-autores">
+  <span>Edwin Alexander Medina Martínez</span>
+  <span class="separador"> & </span>
+  <span>Miguel Ángel Palacio Rodríguez</span>
+</p> <br>
+  <p style="margin-top:0.3rem;">©2026 — Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
