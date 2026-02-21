@@ -3,7 +3,6 @@
 > Tutorial educativo para aprender a construir páginas web profesionales usando **Claude AI** y **Visual Studio Code**, dirigido a principiantes y estudiantes del SENA.
 
 🔗 **Ver tutorial en línea:** `https://alexpruebag25.github.io/tutorial-web-ia/`
-> *(El link estará disponible una vez subas el proyecto a GitHub y actives GitHub Pages)*
 
 ---
 
@@ -29,27 +28,33 @@ Incluye advertencias reales sobre los **límites de la IA** y fuentes oficiales 
 - **Sin frameworks ni librerías externas** 
 
 ---
-
 ## 📁 Estructura del proyecto
 
-```
-📁 tu-pagina web con IA/
-   📄 index.html          ← Página principal (selección de temas)
-   📄 styles.css          ← CSS global compartido por todas las páginas
-   📄 java.js             ← JavaScript global (back-to-top, animaciones)
-   📄 README.md           ← Este archivo
+📁 Tu Página Web con IA/
+   📁 favicon/
+      🖼️ android-chrome-192x192.png
+      🖼️ android-chrome-512x512.png
+      🖼️ apple-touch-icon.png
+      🖼️ favicon-16x16.png
+      🖼️ favicon-32x32.png
+      ⭐ favicon.ico
+      📄 site.webmanifest
+   📁 img/
+      🖼️ og-image.jpg
    📁 tema1/
-      📄 tema1.html       ← Módulo 1: Estructura del proyecto
+      📄 tema1.html
    📁 tema2/
-      📄 tema2.html       ← Módulo 2: HTML5 con IA
+      📄 tema2.html
    📁 tema3/
-      📄 tema3.html       ← Módulo 3: CSS profesional con IA
+      📄 tema3.html
    📁 tema4/
-      📄 tema4.html       ← Módulo 4: JavaScript con IA
-   📁 ia/
-      📄 ia.html          ← Sección: La IA no siempre tiene razón
-   
-```
+      📄 tema4.html
+   📁 Tema5/
+      📄 ia-warning.html
+📄 index.html
+📄 java.js
+📄 README.md
+🎨 styles.css
 
 ---
 
@@ -113,6 +118,8 @@ Este tutorial fue desarrollado con la asistencia de **[Claude AI](https://claude
 Desarrollado como proyecto educativo para el **SENA**  
 Tecnología: Análisis y Desarrollo de Software
 
----
+                    ↓ Creadores del Tutorial ↓
+ 
+Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez
 
-*README creado con ❤️ y mucho aprendizaje*
+---
