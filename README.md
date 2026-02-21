@@ -113,13 +113,11 @@ Este tutorial fue desarrollado con la asistencia de **[Claude AI](https://claude
 
 ---
 
-## 👨‍💻 Autor
-
+## 👨‍💻 ADSO 
 Desarrollado como proyecto educativo para el **SENA**  
 Tecnología: Análisis y Desarrollo de Software
 
-                    ↓ Creadores del Tutorial ↓
- 
+## 👨‍💻 Autores 
 Edwin Alexander Medina Martínez & Miguel Ángel Palacio Rodríguez
 
 ---
