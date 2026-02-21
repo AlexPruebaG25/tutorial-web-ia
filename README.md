@@ -29,7 +29,7 @@ Incluye advertencias reales sobre los **límites de la IA** y fuentes oficiales 
 
 ---
 ## 📁 Estructura del proyecto
-
+```
 📁 Tu Página Web con IA/
    📁 favicon/
       🖼️ android-chrome-192x192.png
@@ -55,7 +55,7 @@ Incluye advertencias reales sobre los **límites de la IA** y fuentes oficiales 
 📄 java.js
 📄 README.md
 🎨 styles.css
-
+```
 ---
 
 ## 📚 Contenido del tutorial
